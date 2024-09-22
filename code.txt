@@ -1,0 +1,274 @@
+Feedback Form me
+
+<div class="container">
+
+<div class="heading">
+
+<h1>Feedback Form</h1>
+
+</div>
+
+<div class="inputs">
+
+<div class="input-fields">
+
+<input type="text" placeholder="Email ID" id="email">
+
+< input type="text" placeholder="Name" id="name">
+
+<input type="text" placeholder="College" id="college">
+
+<label for="textarea" id="feedback">Your Feedback: </label> <textarea id="textarea" cols="25" rows="10"></textarea>
+
+<button class="submit">Submit</button>
+
+</div>
+
+</div>
+
+</div>
+_-----------------------------------------
+
+feedback form OG
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="heading">
+
+            <h1>Feedback Form</h1>
+
+        </div>
+
+        <div class="inputs">
+
+            <div class="input-fields">
+
+                <input type="text" placeholder="Email ID" id="email">
+
+                <input type="text" placeholder="Name" id="name">
+
+                <input type="text" placeholder="College" id="college">
+
+                <label for="textarea" id="feedback">Your Feedback: </label> <textarea id="textarea" cols="25"
+                    rows="10"></textarea>
+
+                <button class="submit">Submit</button>
+
+            </div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+-----------------------------------------------------------------------
+Details me
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <div id="form">
+        <h1>Details</h1>
+        <div id="name">Name:<input type="text" placeholder="name"></div>
+        <div id="colllage">Collage:<input type="text" placeholder="COllage"></div>
+        <div id="roll"> Roll:<input type="number" min="1" value="1"></div>
+        <div id="city">City:<input type="text" placeholder="City"></div>
+
+        <div id="language">
+            Programming :
+            <input type="radio" id="html"><label>Html</label> <br>
+            <input type="radio" id="css"><label for="css">css</label> <br>
+            <input type="radio" id="javascript"><label for="javascript">Javascript</label>
+        </div>
+    </div>
+</body>
+</html>
+____________________________________
+Details OG
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale-1.0">
+
+</head>
+
+<title>Document</title>
+
+<body>
+
+<div id="form">
+
+<h1>Details</h1>
+
+<div id="name">
+
+Name: <input type="text" >
+
+</div>
+
+<div id="college">
+
+College: <input type="text" placeholder="College" >
+
+</div>
+
+I
+
+<div id="roll">
+
+Roll: <input type="number" min-"1" value="1">
+
+</div>
+
+<div id="city">
+
+City: <input type="text" >
+
+</div>
+
+<div id="language">
+
+Programming:
+
+<input type="radio" id="html"><label for="html">HTML</label> <br>
+
+<input type="radio" id="css"><label for="css">CSS</label><br>
+
+<input type="radio" id="javascript"><label for="javascript">Javascript</label>
+
+</div>
+
+</div>
+
+</body>
+
+</html>
+____________________________________________________________________________________________
+Validater
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Validator</title>
+    <style>
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgba(255, 255, 255, 1);
+            text-align: center;
+        }
+
+        h1, h2, h4 {
+            color: rgba(128, 128, 128, 1);
+        }
+
+        input {
+            padding: 5px;
+        }
+
+        button {
+            padding: 5px;
+            background-color: rgba(128, 128, 128, 1);
+            color: rgba(255, 255, 255, 1);
+            border: 1px solid rgba(255, 255, 255, 1);
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(0, 0, 0);
+        }
+    </style>
+    <script>
+        function ValidatePassword() {
+            var passInput = document.getElementById("password").value;
+            var validPass = document.getElementById("valid");
+            var invalidPass = document.getElementById("invalid");
+
+            // Clear previous messages
+            validPass.textContent = "";
+            invalidPass.textContent = "";
+
+            // Check for empty input
+            if (passInput.trim() === "") {
+                invalidPass.textContent = "! Please Enter The Password";
+                return;
+            }
+
+            // Regular expressions for validation
+            var upperRegex = /[A-Z]/;
+            var lowerRegex = /[a-z]/;
+            var digitRegex = /\d/;
+            var symbolRegex = /[!@#$%^&()_;.<>]/;
+            var lengthRegex = /^.{8,50}$/;
+
+            // Validate password
+            if (upperRegex.test(passInput) && lowerRegex.test(passInput) &&
+                digitRegex.test(passInput) && symbolRegex.test(passInput) &&
+                lengthRegex.test(passInput)) {
+                validPass.textContent = "Congratulations! Password is valid.";
+            } else {
+                invalidPass.textContent = "Password must be 8-50 characters long and must contain at least:";
+                if (!upperRegex.test(passInput)) {
+                    invalidPass.textContent += " an uppercase letter;";
+                }
+                if (!lowerRegex.test(passInput)) {
+                    invalidPass.textContent += " a lowercase letter;";
+                }
+                if (!digitRegex.test(passInput)) {
+                    invalidPass.textContent += " a digit;";
+                }
+                if (!symbolRegex.test(passInput)) {
+                    invalidPass.textContent += " a symbol;";
+                }
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>Password Validator</h1>
+        <hr>
+        <h2>Enter Password</h2>
+        <input type="password" id="password" placeholder="Enter Password...">
+        <button onclick="ValidatePassword()">Validate Password</button>
+        <p id="valid"></p>
+        <p id="invalid"></p>
+        <h4>Instructions:</h4>
+        <ul>
+            <li>Password must contain an uppercase letter.</li>
+            <li>Password must contain a lowercase letter.</li>
+            <li>Password must contain a digit.</li>
+            <li>Password must contain a symbol.</li>
+            <li>Password minimum length should be 8 characters.</li>
+            <li>Password maximum length should be 50 characters.</li>
+        </ul>
+    </center>
+</body>
+
+</html>
